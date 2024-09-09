@@ -4,22 +4,25 @@
 #include<string>
 #include<SFML/Graphics.hpp>
 
-typedef sf::RectangleShape rect;
-
 class Label : sf::RectangleShape
 {
 private:
 	std::string note;
 
+	sf::RectangleShape* borders;
+	static const sf::Color background;
+	static sf::Font font;
+
+	void initFont();
+
 public:
 	Label(std::string _note = "");
 	virtual ~Label();
 
-	void rewrite();
-	virtual void draw();
+	void rewrite(std::string newNote);
+	virtual void draw(sf::RenderWindow* pWin);
 
 	// Accessors
-	void setNote();
 	std::string getNote();
 };
 
