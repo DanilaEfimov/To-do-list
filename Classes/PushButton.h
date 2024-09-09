@@ -7,7 +7,7 @@ typedef sf::Vector2i vec2i;
 typedef sf::RectangleShape rect;
 typedef sf::Color color;
 
-class PushButton : rect // pushButton
+class TriggerButton : rect // pushButton
 {
 private:
 	rect* buttonRect;
@@ -19,8 +19,8 @@ private:
 	bool* triggered;
 
 public:
-	PushButton(int xSize, int ySize, int xPos, int yPos);
-	virtual ~PushButton();
+	TriggerButton(int xSize, int ySize, int xPos, int yPos);
+	virtual ~TriggerButton();
 
 	void triggering();
 	void draw(sf::RenderWindow* pWin);
